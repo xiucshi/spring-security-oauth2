@@ -1,5 +1,6 @@
 package cong.springboot.model;
 
+import model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,6 +11,10 @@ import java.util.Collection;
  * @Author : xiuc_shi
  **/
 public class LoginUser extends User implements UserDetails {
+    public LoginUser(String username, String password, String sex, Integer age) {
+        super(username, password, sex, age);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

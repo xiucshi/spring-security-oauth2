@@ -3,7 +3,6 @@ package cong.springboot.server.Impl;
 import cong.springboot.mapper.UserMapper;
 import cong.springboot.model.LoginUser;
 import cong.springboot.server.SxcUserDetialsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

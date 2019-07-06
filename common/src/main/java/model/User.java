@@ -1,6 +1,6 @@
-package cong.springboot.model;
+package model;
 
-import javax.annotation.sql.DataSourceDefinition;
+
 
 /**
  * @Time : 2019/07/06
@@ -42,6 +42,13 @@ public class User {
     }
 
     public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public User(String username, String password, String sex, Integer age) {
+        this.username = username;
+        this.password = password;
+        this.sex = sex;
         this.age = age;
     }
 }
