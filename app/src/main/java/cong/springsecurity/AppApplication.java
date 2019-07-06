@@ -1,13 +1,13 @@
-package cong.springboot;
+package cong.springsecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Oauth2Application {
+public class AppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Oauth2Application.class, args);
+		SpringApplication.run(AppApplication.class, args);
 	}
 
 }
