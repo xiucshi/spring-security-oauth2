@@ -12,7 +12,7 @@ public class AuthServerApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		System.out.println("结果" + new BCryptPasswordEncoder().encode("secret"));
+		System.out.println("结果" + new BCryptPasswordEncoder().encode("123456"));
 	}
 
 }
