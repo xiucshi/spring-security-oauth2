@@ -1,5 +1,7 @@
 package cong.springboot.server.config;
 
+import cong.springboot.server.Impl.UserDetailsImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,14 +24,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
+    @Autowired
+    private UserDetailsImpl userDetailsService;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("admin").password(bCryptPasswordEncoder().encode("123456"))
-                .roles("ADMIN").authorities("/stu/**")
-                .and()
-                .withUser("sxc").password(bCryptPasswordEncoder().encode("123456"))
-                .roles("USER").authorities("/stu");
+//        auth.inMemoryAuthentication()
+//                .withUser("admin").password(bCryptPasswordEncoder().encode("123456"))
+//                .roles("ADMIN").authorities("/stu/**")
+//                .and()
+//                .withUser("sxc").password(bCryptPasswordEncoder().encode("123456"))
+//                .roles("USER").authorities("/stu");
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override
