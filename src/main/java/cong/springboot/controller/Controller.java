@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class Controller {
-
-
     @GetMapping("/auth/user/token")
     public UsernamePasswordAuthenticationToken getToken(@PathVariable("username") String username,@PathVariable("password") String password){
         return new UsernamePasswordAuthenticationToken(username, password);
